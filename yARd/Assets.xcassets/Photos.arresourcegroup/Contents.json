@@ -5,6 +5,9 @@
   },
   "resources" : [
     {
+      "filename" : "code1.arreferenceimage"
+    },
+    {
       "filename" : "ship.arreferenceimage"
     }
   ]

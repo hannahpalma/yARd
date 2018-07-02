@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZS-KA-DfM">
+    <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Camera Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ARCameraController" customModule="yARd" customModuleProvider="target" sceneMemberID="viewController">
                     <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
                     <connections>
@@ -22,6 +23,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="144" y="624"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="rgq-kp-LIh">
+            <objects>
+                <viewController id="uZS-KA-DfM" customClass="HomeViewController" customModule="yARd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nB3-dG-dpb">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thesis Project by Hannah Palma" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-Cb-OPq">
+                                <rect key="frame" x="0.0" y="430" width="1112" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yARd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lys-WP-HTF">
+                                <rect key="frame" x="0.0" y="287" width="1112" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfT-cT-bR3">
+                                <rect key="frame" x="0.0" y="721" width="1112" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue &gt;"/>
+                                <connections>
+                                    <action selector="onContinueSelected:" destination="uZS-KA-DfM" eventType="touchUpInside" id="fa9-zu-8GC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lys-WP-HTF" firstAttribute="leading" secondItem="xqr-Cb-OPq" secondAttribute="leading" id="0xe-JT-zCt"/>
+                            <constraint firstItem="Lys-WP-HTF" firstAttribute="leading" secondItem="nB3-dG-dpb" secondAttribute="leading" id="6kX-XY-ZzX"/>
+                            <constraint firstItem="Lys-WP-HTF" firstAttribute="top" secondItem="kTh-0b-hk8" secondAttribute="top" constant="267" id="S3B-Se-o2s"/>
+                            <constraint firstAttribute="trailing" secondItem="Lys-WP-HTF" secondAttribute="trailing" id="b59-II-7WU"/>
+                            <constraint firstItem="xqr-Cb-OPq" firstAttribute="top" secondItem="Lys-WP-HTF" secondAttribute="bottom" constant="23" id="uPu-nP-ggI"/>
+                            <constraint firstItem="Lys-WP-HTF" firstAttribute="trailing" secondItem="xqr-Cb-OPq" secondAttribute="trailing" id="y64-SS-9Co"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kTh-0b-hk8"/>
+                    </view>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="showDetail" identifier="ARCameraSegue" id="Glv-uz-dwf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wnu-a6-YF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-511.51079136690652" y="624.46043165467631"/>
         </scene>
     </scenes>
 </document>
