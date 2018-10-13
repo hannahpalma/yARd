@@ -14,6 +14,7 @@
 		527951D720CC07A100B9119D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527951D620CC07A100B9119D /* Assets.xcassets */; };
 		527951DA20CC07A100B9119D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527951D820CC07A100B9119D /* LaunchScreen.storyboard */; };
 		F22AA39020E9AE2F00276639 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22AA38F20E9AE2F00276639 /* HomeController.swift */; };
+		F2505BB62106451F0092D76A /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2505BB52106451F0092D76A /* EditorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		527951D920CC07A100B9119D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527951DB20CC07A100B9119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F22AA38F20E9AE2F00276639 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F2505BB52106451F0092D76A /* EditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		527951CC20CC07A000B9119D /* yARd */ = {
 			isa = PBXGroup;
 			children = (
+				F2505BB52106451F0092D76A /* EditorController.swift */,
 				527951CD20CC07A000B9119D /* AppDelegate.swift */,
 				F22AA38F20E9AE2F00276639 /* HomeController.swift */,
 				527951D120CC07A000B9119D /* ARCameraController.swift */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2505BB62106451F0092D76A /* EditorController.swift in Sources */,
 				527951D220CC07A000B9119D /* ARCameraController.swift in Sources */,
 				527951CE20CC07A000B9119D /* AppDelegate.swift in Sources */,
 				F22AA39020E9AE2F00276639 /* HomeController.swift in Sources */,

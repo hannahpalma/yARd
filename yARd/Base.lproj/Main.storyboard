@@ -12,18 +12,31 @@
         <!--Camera Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ARCameraController" customModule="yARd" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                <viewController storyboardIdentifier="ARCameraController" id="BV1-FR-VrT" customClass="ARCameraController" customModule="yARd" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" sceneName="ARSCNView" allowsCameraControl="YES" autoenablesDefaultLighting="YES" id="BrB-h1-WRS">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </arscnView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jIR-RP-OVJ">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Add Plant" id="hdu-ar-NwE">
+                                <connections>
+                                    <segue destination="3Jc-NU-X9X" kind="show" id="5b3-6H-kDN"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit Plant" id="xrz-jB-u9f"/>
+                            <barButtonItem title="Delete Plant" id="aEM-LZ-lKd"/>
+                        </leftBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="624"/>
+            <point key="canvasLocation" x="857.91366906474821" y="623.74100719424462"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="rgq-kp-LIh">
@@ -45,9 +58,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfT-cT-bR3">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GfT-cT-bR3">
                                 <rect key="frame" x="0.0" y="721" width="1112" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="cd5-gE-oiZ"/>
+                                </constraints>
                                 <state key="normal" title="Continue &gt;"/>
                                 <connections>
                                     <action selector="onContinueSelected:" destination="uZS-KA-DfM" eventType="touchUpInside" id="fa9-zu-8GC"/>
@@ -58,20 +73,56 @@
                         <constraints>
                             <constraint firstItem="Lys-WP-HTF" firstAttribute="leading" secondItem="xqr-Cb-OPq" secondAttribute="leading" id="0xe-JT-zCt"/>
                             <constraint firstItem="Lys-WP-HTF" firstAttribute="leading" secondItem="nB3-dG-dpb" secondAttribute="leading" id="6kX-XY-ZzX"/>
+                            <constraint firstItem="kTh-0b-hk8" firstAttribute="bottom" secondItem="GfT-cT-bR3" secondAttribute="bottom" constant="79" id="OSA-oO-xk1"/>
                             <constraint firstItem="Lys-WP-HTF" firstAttribute="top" secondItem="kTh-0b-hk8" secondAttribute="top" constant="267" id="S3B-Se-o2s"/>
                             <constraint firstAttribute="trailing" secondItem="Lys-WP-HTF" secondAttribute="trailing" id="b59-II-7WU"/>
+                            <constraint firstItem="GfT-cT-bR3" firstAttribute="trailing" secondItem="xqr-Cb-OPq" secondAttribute="trailing" id="eLr-bM-ei3"/>
                             <constraint firstItem="xqr-Cb-OPq" firstAttribute="top" secondItem="Lys-WP-HTF" secondAttribute="bottom" constant="23" id="uPu-nP-ggI"/>
+                            <constraint firstItem="GfT-cT-bR3" firstAttribute="leading" secondItem="xqr-Cb-OPq" secondAttribute="leading" id="wcS-59-NH5"/>
                             <constraint firstItem="Lys-WP-HTF" firstAttribute="trailing" secondItem="xqr-Cb-OPq" secondAttribute="trailing" id="y64-SS-9Co"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kTh-0b-hk8"/>
                     </view>
                     <connections>
-                        <segue destination="BV1-FR-VrT" kind="showDetail" identifier="ARCameraSegue" id="Glv-uz-dwf"/>
+                        <segue destination="HEZ-Ve-Jq5" kind="showDetail" identifier="ARCameraSegue" id="Glv-uz-dwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wnu-a6-YF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-511.51079136690652" y="624.46043165467631"/>
+        </scene>
+        <!--Add Plant Controller-->
+        <scene sceneID="cuc-X1-hNf">
+            <objects>
+                <viewController title="Add Plant Controller" id="3Jc-NU-X9X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qCq-hF-hJ7">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="eCh-Ai-m6y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TfZ-36-YQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1515.1079136690648" y="623.74100719424462"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Aji-hK-wck">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-FX-LSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HEZ-Ve-Jq5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sl3-0h-Cbd">
+                        <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="rootViewController" id="0EG-9c-JBU"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="143.5251798561151" y="623.74100719424462"/>
         </scene>
     </scenes>
 </document>

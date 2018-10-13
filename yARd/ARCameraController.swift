@@ -6,7 +6,10 @@ class ARCameraController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
-    override func viewDidLoad() {
+  @IBAction func onSelectPlantsSelected(_ sender: UIBarButtonItem) {
+    print("Button pressed")
+  }
+  override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set the view's delegate
@@ -61,10 +64,13 @@ class ARCameraController: UIViewController, ARSCNViewDelegate {
             var assetName = ""
           
             if imageAnchor.referenceImage.name == "code1" {
-              assetName = "art.scnassets/EU-trees/EU55_2.scn"
+//              assetName = "art.scnassets/EU-trees/EU55_2.scn"
+//              assetName = "art.scnassets/ivy/plants1.scn"
+              assetName = "art.scnassets/fluffy-bush/berbersys.scn"
               
             } else if imageAnchor.referenceImage.name == "ship" {
-              assetName = "art.scnassets/EU-trees/EU55_3.scn"
+//              assetName = "art.scnassets/EU-trees/EU55_3.scn"
+              assetName = "art.scnassets/fir-sapling/fir.scn"
             }
           
             let plantScene = SCNScene(named: assetName)!
