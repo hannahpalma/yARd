@@ -19,15 +19,11 @@
                     </arscnView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="jIR-RP-OVJ">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Add Plant" id="hdu-ar-NwE">
-                                <connections>
-                                    <segue destination="3Jc-NU-X9X" kind="show" id="5b3-6H-kDN"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Edit Plant" id="xrz-jB-u9f"/>
-                            <barButtonItem title="Delete Plant" id="aEM-LZ-lKd"/>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="Add/Edit Plants" id="hdu-ar-NwE">
+                            <connections>
+                                <segue destination="3Jc-NU-X9X" kind="show" id="5b3-6H-kDN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -36,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857.91366906474821" y="623.74100719424462"/>
+            <point key="canvasLocation" x="789" y="624"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="rgq-kp-LIh">
@@ -91,20 +87,62 @@
             </objects>
             <point key="canvasLocation" x="-511.51079136690652" y="624.46043165467631"/>
         </scene>
-        <!--Add Plant Controller-->
+        <!--Add or Edit Plants-->
         <scene sceneID="cuc-X1-hNf">
             <objects>
-                <viewController title="Add Plant Controller" id="3Jc-NU-X9X" sceneMemberID="viewController">
+                <viewController title="Add or Edit Plants" id="3Jc-NU-X9X" customClass="AddEditPlantsController" customModule="yARd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qCq-hF-hJ7">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ctz-i9-dkS">
+                                <rect key="frame" x="0.0" y="70" width="1112" height="714"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="checkmark" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" editingAccessoryType="detailButton" textLabel="BmB-e5-YrO" detailTextLabel="Bsh-6a-1fg" style="IBUITableViewCellStyleValue1" id="TGP-Cd-5FJ">
+                                        <rect key="frame" x="0.0" y="28" width="1112" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TGP-Cd-5FJ" id="Dzb-nJ-51D">
+                                            <rect key="frame" x="0.0" y="0.0" width="1073" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BmB-e5-YrO">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bsh-6a-1fg">
+                                                    <rect key="frame" x="1029" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Jc-NU-X9X" id="5Da-zx-wf3"/>
+                                    <outlet property="delegate" destination="3Jc-NU-X9X" id="Xk7-UM-v4B"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ctz-i9-dkS" secondAttribute="trailing" id="5Li-K7-JCv"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="bottom" secondItem="eCh-Ai-m6y" secondAttribute="bottom" id="Mpc-6m-JA3"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" id="cJC-JB-Hwd"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="leading" secondItem="qCq-hF-hJ7" secondAttribute="leading" id="cRG-P6-Iqc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eCh-Ai-m6y"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfZ-36-YQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1515.1079136690648" y="623.74100719424462"/>
+            <point key="canvasLocation" x="788.84892086330933" y="1307.9136690647483"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aji-hK-wck">
