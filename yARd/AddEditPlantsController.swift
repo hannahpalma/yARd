@@ -12,6 +12,8 @@ class AddEditPlantsController: UIViewController, UITableViewDelegate, UITableVie
 
   // TODO: when a row is selected, show a modal with the plant options and reset the data to the list
 
+  @IBOutlet weak var centerModalConstraint: NSLayoutConstraint!
+  
   struct RowItem {
     var imageNumber: Int
     var assignedPlantName: String
@@ -33,7 +35,17 @@ class AddEditPlantsController: UIViewController, UITableViewDelegate, UITableVie
     
     return cell
   }
-
+  
+  public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("selected row \(rows[indexPath.row])")
+    print("selected section \(rows[indexPath.section])")
+    
+    centerModalConstraint.constant = 0;
+    UIView.animate(withDuration: 0.3, animations: {
+      self.view.layoutIfNeeded()
+    })
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   

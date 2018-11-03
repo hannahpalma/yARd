@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZS-KA-DfM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uZS-KA-DfM">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,16 +129,32 @@
                                     <outlet property="delegate" destination="3Jc-NU-X9X" id="Xk7-UM-v4B"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hp-p3-Bnh">
+                                <rect key="frame" x="1210" y="244" width="492" height="366"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="366" id="0uf-Hw-vEg"/>
+                                    <constraint firstAttribute="width" constant="492" id="r1x-Ej-Fkl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ctz-i9-dkS" secondAttribute="trailing" id="5Li-K7-JCv"/>
-                            <constraint firstItem="ctz-i9-dkS" firstAttribute="bottom" secondItem="eCh-Ai-m6y" secondAttribute="bottom" id="Mpc-6m-JA3"/>
-                            <constraint firstItem="ctz-i9-dkS" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" id="cJC-JB-Hwd"/>
-                            <constraint firstItem="ctz-i9-dkS" firstAttribute="leading" secondItem="qCq-hF-hJ7" secondAttribute="leading" id="cRG-P6-Iqc"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" id="0W1-se-aah"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="centerY" secondItem="8hp-p3-Bnh" secondAttribute="centerY" id="5Xn-fk-3Lq"/>
+                            <constraint firstItem="8hp-p3-Bnh" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" constant="174" id="JeG-AF-kb9"/>
+                            <constraint firstAttribute="trailing" secondItem="ctz-i9-dkS" secondAttribute="trailing" id="TBR-gk-yCe"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="bottom" secondItem="eCh-Ai-m6y" secondAttribute="bottom" id="cjy-z8-ezs"/>
+                            <constraint firstItem="8hp-p3-Bnh" firstAttribute="centerX" secondItem="qCq-hF-hJ7" secondAttribute="centerX" constant="900" id="fa8-Eg-tgt"/>
+                            <constraint firstItem="8hp-p3-Bnh" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" constant="174" id="h6w-Lf-7VW"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="leading" secondItem="qCq-hF-hJ7" secondAttribute="leading" id="o1y-DO-67D"/>
+                            <constraint firstItem="ctz-i9-dkS" firstAttribute="centerX" secondItem="qCq-hF-hJ7" secondAttribute="centerX" id="tj3-37-B33"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eCh-Ai-m6y"/>
                     </view>
+                    <connections>
+                        <outlet property="centerModalConstraint" destination="fa8-Eg-tgt" id="1gK-7d-87I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfZ-36-YQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +163,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Aji-hK-wck">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-FX-LSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HEZ-Ve-Jq5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sl3-0h-Cbd">
@@ -159,6 +174,7 @@
                         <segue destination="BV1-FR-VrT" kind="relationship" relationship="rootViewController" id="0EG-9c-JBU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCt-FX-LSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="143.5251798561151" y="623.74100719424462"/>
         </scene>
