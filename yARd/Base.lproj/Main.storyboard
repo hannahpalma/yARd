@@ -129,32 +129,17 @@
                                     <outlet property="delegate" destination="3Jc-NU-X9X" id="Xk7-UM-v4B"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hp-p3-Bnh">
-                                <rect key="frame" x="1210" y="244" width="492" height="366"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="366" id="0uf-Hw-vEg"/>
-                                    <constraint firstAttribute="width" constant="492" id="r1x-Ej-Fkl"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ctz-i9-dkS" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" id="0W1-se-aah"/>
-                            <constraint firstItem="ctz-i9-dkS" firstAttribute="centerY" secondItem="8hp-p3-Bnh" secondAttribute="centerY" id="5Xn-fk-3Lq"/>
-                            <constraint firstItem="8hp-p3-Bnh" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" constant="174" id="JeG-AF-kb9"/>
                             <constraint firstAttribute="trailing" secondItem="ctz-i9-dkS" secondAttribute="trailing" id="TBR-gk-yCe"/>
                             <constraint firstItem="ctz-i9-dkS" firstAttribute="bottom" secondItem="eCh-Ai-m6y" secondAttribute="bottom" id="cjy-z8-ezs"/>
-                            <constraint firstItem="8hp-p3-Bnh" firstAttribute="centerX" secondItem="qCq-hF-hJ7" secondAttribute="centerX" constant="900" id="fa8-Eg-tgt"/>
-                            <constraint firstItem="8hp-p3-Bnh" firstAttribute="top" secondItem="eCh-Ai-m6y" secondAttribute="top" constant="174" id="h6w-Lf-7VW"/>
                             <constraint firstItem="ctz-i9-dkS" firstAttribute="leading" secondItem="qCq-hF-hJ7" secondAttribute="leading" id="o1y-DO-67D"/>
                             <constraint firstItem="ctz-i9-dkS" firstAttribute="centerX" secondItem="qCq-hF-hJ7" secondAttribute="centerX" id="tj3-37-B33"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eCh-Ai-m6y"/>
                     </view>
-                    <connections>
-                        <outlet property="centerModalConstraint" destination="fa8-Eg-tgt" id="1gK-7d-87I"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TfZ-36-YQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

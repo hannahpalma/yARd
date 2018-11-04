@@ -11,8 +11,6 @@ import UIKit
 class AddEditPlantsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   // TODO: when a row is selected, show a modal with the plant options and reset the data to the list
-
-  @IBOutlet weak var centerModalConstraint: NSLayoutConstraint!
   
   struct RowItem {
     var imageNumber: Int
@@ -20,8 +18,9 @@ class AddEditPlantsController: UIViewController, UITableViewDelegate, UITableVie
   }
   
   var rows = [RowItem]()
-  var plantSelections:ARCameraController.PlantSelections!
-  var onPlantsSelected:((ARCameraController.PlantSelections) -> Void)!
+  var plantSelections: [ARCameraController.Plant] = [ARCameraController.Plant.unselected, ARCameraController.Plant.unselected, ARCameraController.Plant.unselected]
+  var possiblePlants = [ARCameraController.Plant]()
+  var onPlantsSelected:(([ARCameraController.Plant]) -> Void)!
 
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return rows.count
@@ -39,11 +38,35 @@ class AddEditPlantsController: UIViewController, UITableViewDelegate, UITableVie
   public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print("selected row \(rows[indexPath.row])")
     print("selected section \(rows[indexPath.section])")
+    let rowIndexSelected = indexPath.row;
+
+    let alert = UIAlertController(title: "Select a plant", message: "", preferredStyle: .actionSheet)
     
-    centerModalConstraint.constant = 0;
-    UIView.animate(withDuration: 0.3, animations: {
-      self.view.layoutIfNeeded()
-    })
+    for actionIndex in 0...(possiblePlants.count - 1) {
+      let action = UIAlertAction(title: ARCameraController.getPlantDisplayName(plant: possiblePlants[actionIndex]), style: .destructive) { (action) in
+        // Respond to user selection of the action
+        let newSelection = self.possiblePlants[actionIndex]
+        self.rows[rowIndexSelected] = RowItem(imageNumber: (rowIndexSelected + 1), assignedPlantName: ARCameraController.getPlantDisplayName(plant: newSelection))
+        tableView.reloadData()
+        
+        self.plantSelections[rowIndexSelected] = newSelection
+        self.onPlantsSelected(self.plantSelections)
+      }
+      alert.addAction(action)
+    }
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+      // Respond to user selection of the action
+    }
+    alert.addAction(cancelAction)
+
+    // On iPad, action sheets must be presented from a popover.
+    alert.popoverPresentationController?.sourceView = tableView
+
+    self.present(alert, animated: true) {
+      // The alert was presented
+    }
+
   }
   
   override func viewDidLoad() {
@@ -52,20 +75,14 @@ class AddEditPlantsController: UIViewController, UITableViewDelegate, UITableVie
     navigationItem.title = "Add or Edit Plants"
     
     // Pull and set data
-  
-    let row1AssignedPlant = ARCameraController.getPlantDisplayName(plant: plantSelections.stick1);
-    let row1 = RowItem(imageNumber: 1, assignedPlantName: row1AssignedPlant)
-    
-    let row2AssignedPlant = ARCameraController.getPlantDisplayName(plant: plantSelections.stick2);
-    let row2 = RowItem(imageNumber: 2, assignedPlantName: row2AssignedPlant)
-    
-    let row3AssignedPlant = ARCameraController.getPlantDisplayName(plant: plantSelections.stick3);
-    let row3 = RowItem(imageNumber: 3, assignedPlantName: row3AssignedPlant)
-    
-    rows = [row1, row2, row3]
-    
-    plantSelections.stick1 = ARCameraController.Plants.fir
-    onPlantsSelected(plantSelections)
+    for index in 0...(plantSelections.count - 1) {
+      var assignedPlant = ARCameraController.getPlantDisplayName(plant: plantSelections[index]);
+      if (plantSelections[index] == ARCameraController.Plant.unselected) {
+        assignedPlant += " (Please tap to assign a plant)"
+      }
+      let row = RowItem(imageNumber: (index + 1), assignedPlantName: assignedPlant)
+      rows.append(row)
+    }
   }
 
 }

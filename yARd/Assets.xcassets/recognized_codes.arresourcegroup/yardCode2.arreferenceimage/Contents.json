@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ship.jpg"
+      "filename" : "yardCode2.jpg"
     }
   ],
   "info" : {
@@ -10,6 +10,7 @@
     "author" : "xcode"
   },
   "properties" : {
-    "width" : 0.20000000000000001
+    "width" : 10,
+    "unit" : "inches"
   }
 }

@@ -9,39 +9,43 @@ class ARCameraController: UIViewController, ARSCNViewDelegate {
     print("Button pressed")
   }
 
-  struct Plants {
-    static var fir = "art.scnassets/fir-sapling/fir.scn"
-    static var unselected = ""
+  enum Plant {
+    case fir
+    case unselected
   }
   
   // Actual model of what's assigned to what
-  // Image 1 should pull the model for stick 1, etc
-  struct PlantSelections {
-    var stick1 = Plants.unselected
-    var stick2 = Plants.unselected
-    var stick3 = Plants.unselected
-  }
-  
-  var selectedPlants:PlantSelections = PlantSelections()
-  
-  static func getPlantDisplayName(plant: String) -> String {
+  // Image 0 should pull the model for index, etc
+  var selectedPlants: [Plant] = [Plant.unselected, Plant.unselected, Plant.unselected]
+  var possiblePlants: [Plant] = [Plant.fir, Plant.unselected]
+
+  static func getPlantDisplayName(plant: Plant) -> String {
     switch plant {
-    case Plants.fir:
+    case Plant.fir:
       return "Fir Tree"
     default:
-      return "Unassigned (Please tap to assign a plant)"
+      return "Unassigned"
+    }
+  }
+  
+  static func getPlantModelPath(plant: Plant) -> String {
+    switch plant {
+    case Plant.fir:
+      return "art.scnassets/fir-sapling/fir.scn"
+    default:
+      return ""
     }
   }
   
   // Map image found to a "stick" and a plant model
   func recognizedImageNameToModelPath(name: String) -> String {
     switch name {
+    case "yardCode0":
+      return ARCameraController.getPlantModelPath(plant: selectedPlants[0])
     case "yardCode1":
-      return selectedPlants.stick1
+      return ARCameraController.getPlantModelPath(plant: selectedPlants[1])
     case "yardCode2":
-      return selectedPlants.stick2
-    case "yardCode3":
-      return selectedPlants.stick3
+      return ARCameraController.getPlantModelPath(plant: selectedPlants[2])
     default:
       return ""
     }
@@ -61,7 +65,7 @@ class ARCameraController: UIViewController, ARSCNViewDelegate {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   
-    guard let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "Photos", bundle: Bundle.main) else {
+    guard let trackedImages = ARReferenceImage.referenceImages(inGroupNamed: "recognized_codes", bundle: Bundle.main) else {
         print("No images available")
         return
     }
@@ -88,13 +92,20 @@ class ARCameraController: UIViewController, ARSCNViewDelegate {
       let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width, height: imageAnchor.referenceImage.physicalSize.height)
       plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 0)
       let planeNode = SCNNode(geometry: plane)
-      planeNode.eulerAngles.x = -.pi / 2 // why?
+      planeNode.eulerAngles.x = -.pi / 2
+      /*
+       ^^^ `SCNPlane` is vertically oriented in its local coordinate space, but
+       `ARImageAnchor` assumes the image is horizontal in its local space, so
+       rotate the plane to match.
+     */
 
       let assetName = recognizedImageNameToModelPath(name: imageAnchor.referenceImage.name!)
-      let plantScene = SCNScene(named: assetName)!
-      let plantNode = plantScene.rootNode.childNodes.first!
-      planeNode.addChildNode(plantNode)
-      node.addChildNode(planeNode)
+      if (assetName.count > 0) {
+        let plantScene = SCNScene(named: assetName)!
+        let plantNode = plantScene.rootNode.childNodes.first!
+        planeNode.addChildNode(plantNode)
+        node.addChildNode(planeNode)
+      }
     }
   
     return node
@@ -103,7 +114,8 @@ class ARCameraController: UIViewController, ARSCNViewDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let vc = segue.destination as? AddEditPlantsController {
       vc.plantSelections = selectedPlants
-      vc.onPlantsSelected = { (updatedModel: PlantSelections) in
+      vc.possiblePlants = possiblePlants
+      vc.onPlantsSelected = { (updatedModel: [Plant]) in
         self.selectedPlants = updatedModel
       }
     }
