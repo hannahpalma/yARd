@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2018-11-11T21:52:48Z</created><keywords></keywords><modified>2018-11-11T21:52:48Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <library_images>
+    <image id="file2-image" name="file2"><init_from>file:///Users/joehansen/Documents/maya/projects/default/assets/dae/textures/12.png</init_from></image>
+  </library_images>
+  <library_materials>
+    <material id="Material_018" name="Material_018">
+      <instance_effect url="#Material_018-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Material_018-fx" name="Material_018">
+      <profile_COMMON>
+        <technique sid="standard">
+          <phong>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.335664  0.335664 0.335664 1.000000</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50.000000</float>
+            </shininess>
+            <reflective>
+              <color sid="reflective">0.000000  0.000000 0.000000 1.000000</color>
+            </reflective>
+            <reflectivity>
+              <float sid="reflectivity">1.000000</float>
+            </reflectivity>
+            <transparent opaque="RGB_ZERO">
+              <texture texture="file2-image" texcoord="CHANNEL0">
+                <extra>
+                  <technique profile="MAYA">
+                    <wrapU sid="wrapU0">TRUE</wrapU>
+                    <wrapV sid="wrapV0">TRUE</wrapV>
+                    <blend_mode>NONE</blend_mode>
+                  </technique>
+                </extra>
+              </texture>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="Plant_011-lib" name="Plant_011Mesh">
+      <mesh>
+        <source id="Plant_011-POSITION">
+          <float_array id="Plant_011-POSITION-array" count="24">
+-0.157007 0.005014 0.414679
+-0.157007 -1.994986 0.414679
+-0.157007 -1.994986 -0.410064
+-0.157007 0.005015 -0.410064
+1.000000 0.005014 -0.065500
+1.000000 -1.994986 -0.065500
+-1.000000 -1.994986 -0.065500
+-1.000000 0.005014 -0.065500
+</float_array>
+          <technique_common>
+            <accessor source="#Plant_011-POSITION-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plant_011-Normal0">
+          <float_array id="Plant_011-Normal0-array" count="36">
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+-1.000000 0.000000 0.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+0.000000 0.000000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#Plant_011-Normal0-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plant_011-UV0">
+          <float_array id="Plant_011-UV0-array" count="24">
+0.000000 0.000000
+0.999046 0.001517
+0.999046 1.001517
+0.000000 0.000000
+0.999046 0.001517
+0.999046 1.001517
+0.000000 1.000000
+0.000000 0.000000
+0.999046 1.001517
+0.000000 1.000000
+0.000000 0.000000
+0.999046 1.001517
+</float_array>
+          <technique_common>
+            <accessor source="#Plant_011-UV0-array" count="12" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plant_011-VERTEX">
+          <input semantic="POSITION" source="#Plant_011-POSITION"/>
+        </vertices>
+        <triangles count="4" material="Material_018"><input semantic="VERTEX" offset="0" source="#Plant_011-VERTEX"/><input semantic="NORMAL" offset="1" source="#Plant_011-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#Plant_011-UV0"/><p> 0 0 0 3 1 1 2 2 2 4 3 3 7 4 4 6 5 5 1 6 6 0 7 7 2 8 8 5 9 9 4 10 10 6 11 11</p></triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="plant_011" name="plant_011">
+      <node name="null1" id="null1" sid="null1"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra><node name="Plant_011" id="Plant_011" sid="Plant_011"><matrix sid="matrix">0.782024 0.000000 0.000000 0.125612 0.000000 -1.896407 -0.000000 -0.000000 0.000000 0.000000 -1.896407 -0.125613 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#Plant_011-lib"><bind_material><technique_common><instance_material symbol="Material_018" target="#Material_018"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node></node>
+      <extra><technique profile="MAX3D"><frame_rate>30.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.000000</start_time><end_time>1.000000</end_time></technique></extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#plant_011"></instance_visual_scene>
+  </scene>
+</COLLADA>

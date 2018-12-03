@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../AddEditPlantsController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../AppDelegate.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../ARCameraController.swift">
+   </FileRef>
+   <Group
+      location = "group:../art.scnassets"
+      name = "art.scnassets">
+      <Group
+         location = "group:fir-sapling"
+         name = "fir-sapling">
+         <FileRef
+            location = "group:fir.obj">
+         </FileRef>
+         <FileRef
+            location = "group:fir.scn">
+         </FileRef>
+         <FileRef
+            location = "group:bark.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:branch.png">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:GameScene.scn">
+      </FileRef>
+      <Group
+         location = "group:20-package"
+         name = "20-package">
+         <Group
+            location = "group:textures"
+            name = "textures">
+            <FileRef
+               location = "group:8.png">
+            </FileRef>
+            <FileRef
+               location = "group:9.png">
+            </FileRef>
+            <FileRef
+               location = "group:14.png">
+            </FileRef>
+            <FileRef
+               location = "group:15.png">
+            </FileRef>
+            <FileRef
+               location = "group:17.png">
+            </FileRef>
+            <FileRef
+               location = "group:16.png">
+            </FileRef>
+            <FileRef
+               location = "group:12.png">
+            </FileRef>
+            <FileRef
+               location = "group:13.png">
+            </FileRef>
+            <FileRef
+               location = "group:11.png">
+            </FileRef>
+            <FileRef
+               location = "group:10.png">
+            </FileRef>
+            <FileRef
+               location = "group:20.png">
+            </FileRef>
+            <FileRef
+               location = "group:18.png">
+            </FileRef>
+            <FileRef
+               location = "group:19.png">
+            </FileRef>
+            <FileRef
+               location = "group:4.png">
+            </FileRef>
+            <FileRef
+               location = "group:5.png">
+            </FileRef>
+            <FileRef
+               location = "group:7.png">
+            </FileRef>
+            <FileRef
+               location = "group:6.png">
+            </FileRef>
+            <FileRef
+               location = "group:2.png">
+            </FileRef>
+            <FileRef
+               location = "group:3.png">
+            </FileRef>
+            <FileRef
+               location = "group:1.png">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:plant_009.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_008.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_018.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_019.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_000.scn">
+         </FileRef>
+         <FileRef
+            location = "group:exportTest1.scn">
+         </FileRef>
+         <FileRef
+            location = "group:plant_003.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_017.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_016.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_002.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_014.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_000.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_001.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_015.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_011.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_005.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_004.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_010.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_006.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_012.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_013.dae">
+         </FileRef>
+         <FileRef
+            location = "group:plant_007.dae">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:../Assets.xcassets"
+      name = "Assets.xcassets">
+      <Group
+         location = "group:AppIcon.appiconset"
+         name = "AppIcon.appiconset">
+         <FileRef
+            location = "group:icon 58x58.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 60x60.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 120x120.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 80x80.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 20x20.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 58x58-1.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 29x29.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 80x80-1.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 40x40.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:icon 87x87.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 40x40-2.png">
+         </FileRef>
+         <FileRef
+            location = "group:icon 40x40-1.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:recognized_codes.arresourcegroup"
+         name = "recognized_codes.arresourcegroup">
+         <Group
+            location = "group:yardCode2.arreferenceimage"
+            name = "yardCode2.arreferenceimage">
+            <FileRef
+               location = "group:yardCode2.jpg">
+            </FileRef>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <Group
+            location = "group:yardCode1.arreferenceimage"
+            name = "yardCode1.arreferenceimage">
+            <FileRef
+               location = "group:yardCode1.jpg">
+            </FileRef>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <Group
+            location = "group:yardCode0.arreferenceimage"
+            name = "yardCode0.arreferenceimage">
+            <FileRef
+               location = "group:yardCode0.jpg">
+            </FileRef>
+            <FileRef
+               location = "group:Contents.json">
+            </FileRef>
+         </Group>
+      </Group>
+      <FileRef
+         location = "group:Contents.json">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:../Base.lproj"
+      name = "Base.lproj">
+      <FileRef
+         location = "group:LaunchScreen.storyboard">
+      </FileRef>
+      <FileRef
+         location = "group:Main.storyboard">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:../HomeController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../Info.plist">
+   </FileRef>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
